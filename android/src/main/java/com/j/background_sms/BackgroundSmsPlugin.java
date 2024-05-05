@@ -77,7 +77,7 @@ public class BackgroundSmsPlugin implements FlutterPlugin, MethodCallHandler {
         
       }
       smsManager.sendTextMessage(num, null, msg, null, null);
-      result.success("Sent");
+      result.success("Sent"+simSlot.toString();
     } catch (Exception ex) {
       ex.printStackTrace();
       result.error("Failed", "Sms Not Sent", "");
