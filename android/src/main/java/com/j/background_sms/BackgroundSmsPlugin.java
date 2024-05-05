@@ -73,11 +73,8 @@ public class BackgroundSmsPlugin implements FlutterPlugin, MethodCallHandler {
       if (simSlot == null) {
         smsManager = SmsManager.getDefault();
       } else {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
           smsManager = SmsManager.getSmsManagerForSubscriptionId(simSlot);
-        } else {
-          smsManager = SmsManager.getDefault();
-        }
+        
       }
       smsManager.sendTextMessage(num, null, msg, null, null);
       result.success("Sent");
